@@ -5,7 +5,7 @@ export default function Course({ course, refreshCourses }) {
         //TODO mark course as purchased
         try {
             // was /api/courses
-            await fetch('/.netlify/functins/courses', {
+            await fetch('/.netlify/functions/courses', {
                 method: 'PUT',
                 body: JSON.stringify({...course, purchased: true})
             })
@@ -19,7 +19,7 @@ export default function Course({ course, refreshCourses }) {
         //TODO delete course
         try {
             // was const res = await fetch ('/api/coourses')
-            await fetch('/.netlify/functins/courses', {
+            await fetch('/.netlify/functions/courses', {
                 method: 'DELETE',
                 body: JSON.stringify({id: course.id})
             })
