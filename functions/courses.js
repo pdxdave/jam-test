@@ -1,0 +1,22 @@
+const formattedReturn = require('./helpers/formattedReturn');
+const getCourses = require('./helpers/getCourses');
+const createCourse = require('./helpers/createCourse');
+const deleteCourse = require('./helpers/deleteCourse');
+const updateCourse = require('./helpers/updateCourse');
+exports.handler = async (event) => {
+    // TODO: call appropriate helper function based on HTTP method
+    if(event.httpMethod === 'GET'){
+        return await getCourses(event)
+    }
+    if(event.httpMethod === 'POST'){
+        return await createCourse(event)
+    }
+    if(event.httpMethod === 'PUT'){
+        return await updateCourse(event)
+    }
+    if(event.httpMethod === 'DELETE'){
+        return await deleteCourse(event)
+    } else {
+        return formattedReturn(405, {})
+    }
+};
