@@ -23,7 +23,8 @@ export default function CourseForm({ courseAdded }) {
                     name, link, tags
                 })
             })
-            const data = await res.json()
+            // was const data =
+            await res.json()
             resetForm();
             courseAdded();
         } catch (error) {

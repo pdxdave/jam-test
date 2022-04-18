@@ -17,7 +17,8 @@ export default function Course({ course, refreshCourses }) {
     const deleteCourse = async () => {
         //TODO delete course
         try {
-            const res = await fetch('/api/courses', {
+            // was const res = 
+            await fetch('/api/courses', {
                 method: 'DELETE',
                 body: JSON.stringify({id: course.id})
             })
